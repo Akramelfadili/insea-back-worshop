@@ -4,11 +4,9 @@ import { generateJWT } from '../../jwt.js'
 async function signup(req, res) {
     const { email, name, password } = req.body
 
-
-    if (!email || !password || !name) {
+    if (!email || !password) {
         return res.status(400).send({ message: 'Email,name and password are required' })
     }
-
     const userWithEmail = await getUserByEmail(email)
 
     if (userWithEmail) {
