@@ -1,0 +1,23 @@
+{
+    "name": "insea-back-worshop",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write .",
+        "lint": "eslint . --ext .js,.mjs"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.2",
+        "express": "^4.17.3",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.10.0",
+        "eslint-config-prettier": "^8.5.0",
+        "prettier": "^2.5.1"
+    }
+}
