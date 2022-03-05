@@ -1,13 +1,12 @@
-var express = require('express');
-var app = express();
+import app from './app.js'
+import connectToMongo from './database/mongo.js'
 
-app.get('/', (req, res) => {
-    res.json({ status: 'OK' })
-})
+const PORT = process.env.PORT || 4000
 
-var server = app.listen(8080, function() {
-    var host = server.address().address
-    var port = server.address().port
-
-    console.log("Example app listening at http://%s:%s", host, port)
-})
+async function startServer() {
+    await connectToMongo()
+    app.listen(PORT, () => {
+        console.log(`Server running http://localhost:${PORT}`)
+    })
+}
+startServer()
